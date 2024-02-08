@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            padding-top: 20px;
+            background-color: #f0f2f5;
+        }
+
+        #chat-window {
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #messages li {
+            padding: 8px;
+            margin-bottom: 2px;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+        }
+
+        #form {
+            margin-top: 20px;
+        }
+
+        #input {
+            width: 85%;
+        }
+
+        h2 {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center text-white py-3 rounded shadow-lg mb-3">Real-Time Chat Application</h2>
+                <div id="chat-window" class="border rounded bg-white">
+                    <ul id="messages" class="p-2"></ul>
+                </div>
+                <form id="form" action="" class="form-inline mt-3 d-flex gap-5 justify-content-between">
+                    <input id="input" autocomplete="off" class="form-control mr-2" />
+                    <input type="submit" class="btn btn-success px-5" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/socket.io/client-dist/socket.io.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
