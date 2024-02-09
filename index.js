@@ -2,10 +2,20 @@ const express = require('express');
 const http = require('http');
 const path = require('path');
 const socketIo = require('socket.io');
+const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"],
+        allowedHeaders: ["my-custom-header"],
+        credentials: true
+    }
+});
+
+app.use(cors());
 
 app.use(express.static(__dirname + '/public'));
 
